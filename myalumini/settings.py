@@ -52,6 +52,9 @@ INSTALLED_APPS = [
 
     'widget_tweaks'
 ]
+
+#INSTALLED_APPS += ('storages',)
+
 AUTH_USER_MODEL = 'account_sec.User'
 
 AUTHENTICATION_BACKENDS = [
@@ -101,14 +104,14 @@ WSGI_APPLICATION = 'myalumini.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alumninit',
+        'USER': 'postgres',
+        'PASSWORD' : 'raju5678',
+        'HOST' : 'localhost',
     }
 }
 
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
 
 
 # Password validation

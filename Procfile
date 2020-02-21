@@ -1,1 +1,0 @@
-web: gunicorn myalumini.wsgi --log-file -
