@@ -102,9 +102,19 @@ WSGI_APPLICATION = 'myalumini.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-
-
-DATABASES = {
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
+        }
+    }
+else:
+    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'alumninit',
@@ -151,10 +161,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)
+#STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, "..","static")
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
