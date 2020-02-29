@@ -102,9 +102,18 @@ WSGI_APPLICATION = 'myalumini.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alumninit',
+        'USER': 'postgres',
+        'PASSWORD' : 'raju5678',
+        'HOST' : 'localhost',
+    }
+} '''
 
-
-
+"""
 if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
@@ -124,6 +133,17 @@ else:
         'USER': 'postgres',
         'PASSWORD' : 'raju5678',
         'HOST' : 'localhost',
+    }
+}
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'alumnidb_aws',
+        'USER': 'postgres',
+        'PASSWORD' : 'nitalumni48',
+        'HOST' : 'alumnidb.cpw1ne4c1qmy.us-west-2.rds.amazonaws.com',
+        'PORT' : '5432',
     }
 }
 
