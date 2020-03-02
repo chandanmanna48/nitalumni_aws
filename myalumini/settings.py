@@ -50,7 +50,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 
-    'widget_tweaks'
+    'widget_tweaks',
+
+    'storages',
 ]
 
 #INSTALLED_APPS += ('storages',)
@@ -242,6 +244,15 @@ EMAIL_PORT= 587
 EMAIL_HOST_USER = 'NitAlumini2020@gmail.com'
 EMAIL_HOST_PASSWORD='nalanda@2020'
 
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIAT33ESB4CLXT5SPBK'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'alumninit-storage'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
