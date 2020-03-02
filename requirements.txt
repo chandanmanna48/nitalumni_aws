@@ -3,7 +3,8 @@ awsebcli==3.17.1
 bcrypt==3.1.7
 blessed==1.9.5
 boto==2.49.0
-botocore==1.14.17
+boto3==1.12.11
+botocore==1.15.11
 cached-property==1.5.1
 cement==2.8.2
 certifi==2019.9.11
@@ -49,7 +50,7 @@ PyYAML==5.2
 requests==2.20.1
 requests-oauthlib==0.3.1
 rsa==3.4.2
-s3transfer==0.1.13
+s3transfer==0.3.3
 semantic-version==2.5.0
 six==1.11.0
 social-auth-app-django==3.1.0
