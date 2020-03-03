@@ -246,10 +246,15 @@ EMAIL_HOST_PASSWORD='nalanda@2020'
 
 #S3 BUCKETS CONFIG
 
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+
 AWS_ACCESS_KEY_ID = 'AKIAT33ESB4CCLSBMS5Q'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'alumninit-static'
-AWS_S3_REGION_NAME = 'US West(Oregon)'
+#AWS_S3_REGION_NAME = 'US West(Oregon)'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 #AWS_S3_OBJECT_PARAMETERS = {
 #    'CacheControl': 'max-age=86400',
@@ -261,6 +266,9 @@ AWS_S3_FILE_OVERWRITE = False
 #    os.path.join(BASE_DIR,'static'),
 #]
 #STATIC_URL = 'http://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_LOCATION = 'static'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
