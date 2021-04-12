@@ -144,7 +144,7 @@ DATABASES = {
         'NAME': 'alumnidb_aws',
         'USER': 'postgres',
         'PASSWORD' : 'nitalumni48',
-        'HOST' : 'alumnidb.cpw1ne4c1qmy.us-west-2.rds.amazonaws.com',
+        'HOST' : '',
         'PORT' : '5432',
     }
 }
@@ -241,8 +241,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT= 587
-EMAIL_HOST_USER = 'NitAlumini2020@gmail.com'
-EMAIL_HOST_PASSWORD='nalanda@2020'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD=''
 
 #S3 BUCKETS CONFIG
 
